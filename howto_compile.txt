@@ -1,0 +1,7 @@
+nasm -f elf64 hello.S -o hello.o
+gcc hello.o -o hello
+
+
+compile test program with -L./ -lasm
+
+export LD_LIBRARY_PATH=.
