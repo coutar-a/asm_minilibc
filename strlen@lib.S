@@ -33,6 +33,5 @@ loop:
 	jmp loop		; jump à loop
 
 end:
-	;mov es, eax
 	mov rax, rbx
 	ret			; retour
