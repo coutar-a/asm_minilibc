@@ -23,7 +23,7 @@ end:
 	;; strchr
 
 strchr:
-	mov r12, rdi		; stock str sur rdi
+	mov r12, rdi		; stock str de rdi sur r12
 	mov ecx, esi		; on copie les 4 derniers octets de rsi (esi) sur ecx
 
 loop_chr:
@@ -40,4 +40,23 @@ end_chr:
 	ret
 end_chr_none:
 	mov rax, 0x0
+	ret
+
+	;;memset
+
+memset:
+	mov r12, rdi		; str sur r12
+	mov ecx, esi		; char sur ecx
+	mov r13, rdx		; n sur r13
+	xor rbx, rbx		; xor de rbx pour servir de compteur
+
+loop_memset:
+	cmp rbx, r13
+	je end_memset
+	mov [r12], cl
+	inc r12
+	inc rbx
+	jmp loop_memset
+
+end_memset:
 	ret
