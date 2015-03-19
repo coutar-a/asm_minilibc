@@ -5,7 +5,7 @@
 ** Login   <durand_u@epitech.net>
 ** 
 ** Started on  Tue Mar 17 10:37:37 2015 Rémi DURAND
-** Last update Thu Mar 19 15:26:54 2015 Ambroise Coutarel
+** Last update Thu Mar 19 15:42:50 2015 Ambroise Coutarel
 */
 
 #include <stdlib.h>
@@ -35,6 +35,9 @@ int	main()
   printf("%d\n\n", strcmp(lol, "xddddm8"));
   printf("strncmp : \n");
   printf("%d\n", strncmp(lol, "koujouk", 12));
+  printf("memmove : \n");
+  memmove(lol, lol, strlen(lol));
+  printf("%s\n", lol);
   /*free(lol);
   free(louwl);
   lol = strdup("012");
