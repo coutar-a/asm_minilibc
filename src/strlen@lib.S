@@ -1,5 +1,7 @@
 	global strlen:function
 	global strchr:function
+	global memset:function
+	global memcpy:function
 
 	;; strlren
 
@@ -60,3 +62,86 @@ loop_memset:
 
 end_memset:
 	ret
+
+	;;memcpy
+
+memcpy:
+	mov r12, rdi
+	mov r13, rsi
+	xor rbx, rbx
+
+loop_memcpy:
+	cmp rbx, rdx
+	je end_memcpy
+	mov al, [r13]
+	mov [r12], al
+	inc r12
+	inc r13
+	inc rbx
+	jmp loop_memcpy
+
+end_memcpy:
+	ret
+
+	;;strcmp
+
+strcmp:
+	mov r12, rdi
+	mov r13, rsi
+
+loop_strcmp:
+	mov	al, [r12]
+	cmp	al, [r13]
+	jne	end_strcmp
+	cmp	al, 0x0
+	je	end_strcmp_eq
+	inc	r12
+	inc	r13
+	jmp	loop_strcmp
+
+end_strcmp:
+	mov	al, [r12]
+	sub	[r13], al
+	mov	eax, [r13]
+	ret
+
+end_strcmp_eq:
+	mov	bl, [r13]
+	cmp	bl, 0x0
+	jne	loop_strcmp
+	mov	eax, 0x0
+	ret
+
+	;;strncmp
+
+strncmp:
+	mov r12, rdi
+	mov r13, rsi
+	xor rbx, rbx
+
+loop_strncmp:
+	mov	al, [r12]
+	cmp	al, [r13]
+	jne	end_strncmp
+	cmp	al, 0x0
+	je	end_strncmp_eq
+	cmp	rbx, rdx
+	jne	end_strncmp
+	inc	r12
+	inc	r13
+	inc	rbx
+	jmp	loop_strncmp
+
+end_strncmp:
+	mov	al, [r12]
+	sub	[r13], al
+	mov	eax, [r13]
+	ret
+
+end_strncmp_eq:
+	mov	bl, [r13]
+	cmp	bl, 0x0
+	jne	loop_strncmp
+	mov	eax, 0x0
+	ret
+	

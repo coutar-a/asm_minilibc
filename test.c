@@ -5,7 +5,7 @@
 ** Login   <durand_u@epitech.net>
 ** 
 ** Started on  Tue Mar 17 10:37:37 2015 Rémi DURAND
-** Last update Wed Mar 18 13:45:03 2015 Rémi DURAND
+** Last update Thu Mar 19 11:27:31 2015 Rémi DURAND
 */
 
 #include <stdlib.h>
@@ -16,8 +16,10 @@ int	main()
 {
   char	*lol;
   char	*ret;
+  char	*louwl;
 
   lol = strdup("xddddm8");
+  louwl = strdup("koujouk");
   printf("%d\n", strlen(lol)); // test strlen
   ret = strchr(lol, 'm');
   if (ret != NULL)
@@ -26,5 +28,21 @@ int	main()
     printf("Fail\n");
   memset(lol, 'c', 7);
   printf("%s\n", lol);
+  memcpy(lol, louwl, strlen(louwl));
+  printf("%s\n", lol);
+  printf("%d\n", strcmp(lol, "koujouk"));
+  printf("%d\n", strcmp(lol, "koujouk0"));
+  printf("%d\n\n", strcmp(lol, "xddddm8"));
   free(lol);
+  free(louwl);
+  lol = strdup("012");
+  louwl = strdup("052");
+  printf("%d\n", strncmp(lol, louwl, 4));
+  printf("%d\n", strncmp(lol, louwl, 1));
+  free(lol);
+  free(louwl);
+  lol = strdup("012");
+  louwl = strdup("012");
+  printf("%d\n", strncmp(lol, louwl, 4));
+  printf("%d\n", strncmp(lol, louwl, 5));
 }
