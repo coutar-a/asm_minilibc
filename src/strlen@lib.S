@@ -90,6 +90,8 @@ end_memcpy:
 strcmp:
 	mov 	r12, rdi
 	mov 	r13, rsi
+	xor	rax, rax
+	xor	rbx, rbx
 
 loop_strcmp:
 	mov	al, [r12]
@@ -103,7 +105,7 @@ loop_strcmp:
 	jmp	loop_strcmp
 
 end_strcmp:
-	sub	al, bl
+	sub	eax, ebx
 	ret
 
 end_strcmp_eq:
