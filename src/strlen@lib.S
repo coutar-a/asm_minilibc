@@ -103,13 +103,9 @@ loop_strcmp:
 	jmp	loop_strcmp
 
 end_strcmp:
-	mov	al, [r12]
-	mov	bl, [r13]
 	sub	al, bl
-	cbw
-	cwd
 	ret
 
 end_strcmp_eq:
-	mov	eax, 0x0
+	xor	eax, eax
 	ret
