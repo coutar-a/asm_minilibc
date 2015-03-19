@@ -1,13 +1,2 @@
-break strchr
-
-
-
-
-
-
-
-
-
-
-
+break printf
 
