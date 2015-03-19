@@ -5,7 +5,7 @@
 ** Login   <durand_u@epitech.net>
 ** 
 ** Started on  Tue Mar 17 10:37:37 2015 Rémi DURAND
-** Last update Thu Mar 19 15:42:50 2015 Ambroise Coutarel
+** Last update Thu Mar 19 15:59:16 2015 Ambroise Coutarel
 */
 
 #include <stdlib.h>
@@ -38,6 +38,8 @@ int	main()
   printf("memmove : \n");
   memmove(lol, lol, strlen(lol));
   printf("%s\n", lol);
+  printf("rindex : \n");
+  printf("%s\n", rindex(lol, 'j'));
   /*free(lol);
   free(louwl);
   lol = strdup("012");
