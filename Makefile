@@ -5,7 +5,7 @@
 ## Login   <ganesha@epitech.net>
 ##
 ## Started on  Fri Feb 27 13:30:26 2015 Ambroise Coutarel
-## Last update Fri Mar 20 10:51:14 2015 Rémi DURAND
+## Last update Fri Mar 20 13:44:04 2015 Rémi DURAND
 ##
 
 SRC	=	src/strlen@lib.S	\
@@ -18,7 +18,8 @@ SRC	=	src/strlen@lib.S	\
 		src/strncmp@lib.S	\
 		src/strpbrk@lib.S	\
 		src/strstr@lib.S	\
-		src/strcasecmp@lib.S
+		src/strcasecmp@lib.S	\
+		src/strcspn@lib.S
 
 OBJ	=	$(SRC:.S=.o)
 
