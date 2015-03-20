@@ -5,7 +5,7 @@
 ** Login   <durand_u@epitech.net>
 ** 
 ** Started on  Tue Mar 17 10:37:37 2015 Rémi DURAND
-** Last update Thu Mar 19 18:19:10 2015 Ambroise Coutarel
+** Last update Fri Mar 20 10:16:27 2015 Ambroise Coutarel
 */
 
 #include <stdlib.h>
@@ -17,6 +17,7 @@ int	main()
   char	*lol;
   char	*ret;
   char	*louwl;
+  char	*test;
 
   lol = strdup("xddddm8");
   louwl = strdup("koujouk");
@@ -41,19 +42,11 @@ int	main()
   printf("rindex : \n");
   printf("%s\n", rindex(lol, 'j'));
   printf("strstr : \n");
-  printf("%s\n", strstr(lol, "k"));
-  /*free(lol);
-  free(louwl);
-  lol = strdup("012");
-  louwl = strdup("052");
-  printf("%d\n", strncmp(lol, louwl, 4));
-  printf("%d\n", strncmp(lol, louwl, 1));
-  free(lol);
-  free(louwl);
-  lol = strdup("0123");
-  louwl = strdup("012");
-  printf("%d\n", strncmp(lol, louwl, 4));
-  printf("%d\n", strncmp(lol, louwl, 3));*/
+  test = strstr(lol, "uj");
+  printf("%s\n", !test ? "nothing bro" : test);
+  printf("strpbrk : \n");
+  test = strpbrk(lol, "ab");
+  printf("%s\n", !test ? "nothing bro" : test);
   free(lol);
   free(louwl);
 }
